@@ -1,0 +1,29 @@
+/* CSS declarations go here */
+body {
+  background: #FCFDFD;
+}
+
+.nav.nav-pills {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+}
+
+.nav.nav-pills li {
+  padding: 0 20px 0 20px;
+  /* flex: 1; */
+}
+
+.nav.nav-pills li:first-child {
+  padding-left: 0;
+}
+
+.nav.nav-pills li:last-child {
+  padding-right: 0;
+}
+
+.red-text {
+  color: red;
+}

@@ -1,0 +1,24 @@
+<template name="Layout">
+  <div class="container">
+    <h1>Welcome to Meteor blog!</h1>
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item {{isActiveRoute 'Home_page' class='active'}}">
+        <a class="nav-link {{isActiveRoute 'Home_page' class='active'}}" href="{{pathFor 'Home_page'}}">Home</a>
+      </li>
+      <li class="nav-item {{isActiveRoute 'Blog_page' class='active'}}
+          {{isActiveRoute 'Blog_create_page' class='active'}} {{isActiveRoute 'Blog_edit_page' class='active'}}">
+        <a class="nav-link {{isActiveRoute 'Blog_page' class='active'}}
+            {{isActiveRoute 'Blog_create_page' class='active'}} {{isActiveRoute 'Blog_edit_page' class='active'}}"
+            href="{{pathFor 'Blog_page'}}">
+          Blog
+        </a>
+      </li>
+      <li class="nav-item {{isActiveRoute 'About_page' class='active'}}">
+        <a class="nav-link {{isActiveRoute 'About_page' class='active'}}" href="{{pathFor 'About_page'}}">About</a>
+      </li>
+      {{> loginButtons}}
+    </ul>
+
+    {{> Template.dynamic template=main}}
+  </div>
+</template>

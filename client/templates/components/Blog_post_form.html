@@ -1,0 +1,22 @@
+<template name="Blog_post_form">
+  <form id="blog-post-form" novalidate="novalidate">
+    <div class="form-group" data-required="true">
+      <label for="post-title" class="control-label">Title</label>
+      <input type="text" name="title" id="post-title" value="{{post.title}}" data-schema-key="title" maxlength="200" class="form-control">
+      <span class="help-block"></span>
+    </div>
+
+    <div class="form-group" data-required="true">
+      <label for="post-content" class="control-label">Content</label>
+      <textarea rows="7" name="content" id="post-content" value="{{post.content}}" data-schema-key="content" class="form-control"></textarea>
+      <span class="help-block"></span>
+    </div>
+
+    {{#each errors}}
+      <p class="red-text">{{this}}</p>
+    {{/each}}
+
+    <input type="hidden" name="_id" value="{{post._id}}" />
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</template>

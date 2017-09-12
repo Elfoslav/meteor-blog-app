@@ -1,0 +1,20 @@
+<template name="Blog_page">
+  <h1>
+    Blog
+    {{#if currentUser}}
+      | <a class="btn btn-success" href="{{pathFor 'Blog_create_page'}}">Create new post!</a>
+    {{/if}}
+  </h1>
+  {{#each posts}}
+    <h2>
+      <a href="{{pathFor 'Blog_show_page' slug=slug}}">{{title}}</a>
+      {{#if currentUser}}
+        <small>(<a href="{{pathFor 'Blog_edit_page' _id=_id}}">Edit</a>)</small>
+      {{/if}}
+    </h2>
+    <div>{{> Blog_post_content content=content}}</div>
+    <hr />
+  {{else}}
+    <p>No posts, yet.</p>
+  {{/each}}
+</template>

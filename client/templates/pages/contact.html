@@ -1,0 +1,85 @@
+<template name="Contact_page">
+  <div class="doubling stackable two column ui grid">
+    <div class="eight wide column">
+      <h1 id="page-title">Contact</h1>
+      <h2 class="huge-text text-dark-blue">PPC catalogue application</h2>
+      <div class="text-blue">HEADQUARTERS</div>
+      <div class="text-dark-blue bigger-text"><b>PPC Insulators Austria GmbH</b></div>
+
+      <br />
+      <div class="smaller-line-height">
+        <div class="text-blue">ADDRESS</div>
+        <div>Wienerbergstraße</div>
+        <div>Tower B, 13th fl.</div>
+        <div>1100 Vienna - Austria</div>
+      </div>
+
+      <br />
+      <div class="smaller-line-height">
+        <div class="text-blue">PHONE</div>
+        <div>+43 (1) 982 58 50-1541</div>
+      </div>
+
+      <br />
+      <div class="smaller-line-height">
+        <div class="text-blue">FAX</div>
+        <div>+43 (1) 982 58 50-1540</div>
+      </div>
+
+      <br />
+      <div class="smaller-line-height">
+        <div class="text-blue">E-MAIL</div>
+        <div>info@ppcinsulators.com</div>
+      </div>
+    </div>
+
+    <div class="eight wide column">
+      <div id="map"></div>
+    </div>
+  </div>
+  <script>
+    function initMap() {
+      var brazil = {lat: -13.6970436, lng: -69.7616433};
+      var vienna = { lat: 48.2205994, lng: 16.2396326 };
+      var germany = { lat: 51.0894616, lng: 5.9563368 };
+      var usa = { lat: 36.2016755, lng: -113.7796949 };
+
+      var northAtlantic = { lat: 36.4141543, lng: -46.1039136 }
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: northAtlantic
+      });
+
+      var markerVienna = new google.maps.Marker({
+        position: vienna,
+        map: map,
+        title: 'Vienna',
+        icon: 'https://www.colombe.fr/images/gmarker/ylw-pushpin.png'
+      });
+
+      var markerBrazil = new google.maps.Marker({
+        position: brazil,
+        map: map,
+        title: 'Brazil'
+      });
+
+      var markerUSA = new google.maps.Marker({
+        position: usa,
+        map: map,
+        title: 'USA',
+        icon: 'http://front1.vkupon.ru/images/catalog/marker.png'
+      });
+
+      var markerGermany = new google.maps.Marker({
+        position: germany,
+        map: map,
+        title: 'Germany',
+        icon: 'https://mt.googleapis.com/vt/icon/name=icons/onion/157-yellow-dot.png'
+      });
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdk2IoaQuw-jgtGJ0e8a1VVUVvIZYkQV0&callback=initMap">
+  </script>
+</template>

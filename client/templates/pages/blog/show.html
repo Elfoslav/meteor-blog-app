@@ -1,0 +1,13 @@
+<template name="Blog_show_page">
+  <h2>{{post.title}}</h2>
+  {{#if currentUser}}
+    <p>
+      <a class="btn btn-default" href="{{pathFor 'Blog_edit_page' _id=post._id}}">Edit post</a>
+      {{> Blog_post_deleteButton _id=post._id}}
+    </p>
+  {{/if}}
+  <p class="small-text">{{> formatDate date=post.createdAt}} {{#if post.updatedAt}} ({{> formatDate date=post.updatedAt}}) {{/if}}</p>
+  <div>
+    {{> Blog_post_content content=post.content}}
+  </div>
+</template>
